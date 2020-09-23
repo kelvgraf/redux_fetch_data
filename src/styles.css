@@ -1,0 +1,29 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+p {
+  margin: 0 0 5px 0;
+}
+
+.messageAlert {
+  color: red;
+}
+
+.foodSelector {
+  margin-bottom: 20px;
+}
+
+.champIMG {
+  width: 100px;
+  margin: 0 5px 5px 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.champIMG:hover {
+  /* margin: 0 5px 0px 5px; */
+  box-shadow: 5px 5px 10px green;
+  /* border-bottom: 5px solid green; */
+}
