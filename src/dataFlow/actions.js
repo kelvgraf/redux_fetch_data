@@ -4,15 +4,16 @@ export const GET_CHAMP_STARTED = "GET_CHAMP_STARTED";
 export const GET_CHAMP_SUCESS = "GET_CHAMP_SUCESS";
 export const GET_CHAMP_FAILURE = "GET_CHAMP_FAILURE";
 
-export const getChampData = () => {
+export const getChampData = (uri, selectedChamp) => {
+  console.log("[ACTION] getChamp selected", selectedChamp)
   return async (dispatch) => {
     dispatch(getChampStarted());
 
     axios
-      .get("http://ddragon.leagueoflegends.com/cdn/10.19.1/data/pt_BR/champion/Urgot.json")
+      .get(uri)
       .then((res) => {
         setTimeout(() => {
-          dispatch(getChampSucess(res.data));
+          dispatch(getChampSucess(res.data, selectedChamp));
         }, 2000)
         
       })
@@ -28,11 +29,13 @@ const getChampStarted = () => {
   };
 };
 
-const getChampSucess = (data) => {
+const getChampSucess = (data, selectedChamp) => {
+  console.log("[ACTION] selected", selectedChamp)
   return {
     type: GET_CHAMP_SUCESS,
+    selectedChamp: selectedChamp,
     payload: {
-      ...data
+      ...data,
     }
   };
 };

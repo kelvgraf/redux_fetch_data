@@ -7,6 +7,7 @@ import {
 const INITIAL_STATE = {
   loading: false,
   payload: undefined,
+  selectedChamp: null,
   err: null
 };
 
@@ -22,7 +23,10 @@ const reducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         loading: false,
-        payload: action.payload
+        selectedChamp: action.selectedChamp,
+        payload: {
+          ...action.payload,
+        }
       };
 
     case GET_CHAMP_FAILURE:

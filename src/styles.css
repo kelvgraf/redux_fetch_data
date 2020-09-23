@@ -7,6 +7,10 @@ p {
   margin: 0 0 5px 0;
 }
 
+h1, h2, h3 {
+  margin: 0;
+}
+
 .messageAlert {
   color: red;
 }
@@ -26,4 +30,22 @@ p {
   /* margin: 0 5px 0px 5px; */
   box-shadow: 5px 5px 10px green;
   /* border-bottom: 5px solid green; */
+}
+
+.loadingText{
+  color: green;
+}
+
+.loreCont{
+  text-align: left;
+  width: calc(100%-50px);
+  min-height: 100px;
+  padding: 20px 25px 20px 25px;
+  background-color: gray;
+  margin: 0;
+}
+
+.champData{
+  padding-top: 20px; 
+  background-color: gray;
 }
